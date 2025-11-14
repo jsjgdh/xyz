@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+<div style="margin-bottom: 2rem;">
+  <h1 style="font-size: 2.5rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+    <i class="fas fa-chart-line"></i> Dashboard
+  </h1>
+  <p style="color: var(--text-secondary); font-size: 1.1rem;">Monitor weather conditions and soil properties for optimal crop planning</p>
+</div>
+
+<section class="controls">
+  <input id="location-input" placeholder="🔍 Enter city, state, or coordinates..." style="flex: 1; min-width: 250px;">
+  <button id="search-btn" class="btn"><i class="fas fa-search"></i> Search</button>
+  <div id="coord" style="padding: 0.5rem 1rem; background: var(--bg-secondary); border-radius: var(--radius); color: var(--text-secondary); font-size: 0.875rem; white-space: nowrap;"></div>
+  <span id="status" class="status"></span>
+  <a class="btn secondary" href="/rec"><i class="fas fa-seedling"></i> View Recommendations</a>
+</section>
+
+<section class="grid">
+  <div class="panel">
+    <h3><i class="fas fa-cloud-sun" style="color: var(--primary);"></i> Weather Conditions</h3>
+    <div class="metrics" id="weather-metrics"></div>
+  </div>
+  <div class="panel">
+    <h3><i class="fas fa-mountain" style="color: var(--secondary);"></i> Soil Properties</h3>
+    <div class="metrics" id="soil-metrics"></div>
+  </div>
+  <div class="panel">
+    <h3><i class="fas fa-cloud-rain" style="color: var(--primary-light);"></i> Rainfall Forecast</h3>
+    <canvas id="rainChart"></canvas>
+  </div>
+  <div class="panel">
+    <h3><i class="fas fa-thermometer-half" style="color: var(--accent);"></i> Temperature Forecast</h3>
+    <canvas id="tempChart"></canvas>
+  </div>
+  <div class="panel">
+    <h3><i class="fas fa-flask" style="color: var(--secondary);"></i> Soil pH Level</h3>
+    <canvas id="phChart"></canvas>
+  </div>
+  <div class="panel">
+    <h3><i class="fas fa-leaf" style="color: var(--success);"></i> Organic Carbon</h3>
+    <canvas id="socChart"></canvas>
+  </div>
+</section>
+
+<script src="/static/js/api.js"></script>
+<script src="/static/js/dashboard.js"></script>
+{% endblock %}

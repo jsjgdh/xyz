@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+<div style="margin-bottom: 2rem;">
+  <h1 style="font-size: 2.5rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+    <i class="fas fa-calendar-alt"></i> Planting Calendar
+  </h1>
+  <p style="color: var(--text-secondary); font-size: 1.1rem;">Plan your planting schedule based on optimal growing conditions</p>
+</div>
+
+<section class="controls">
+  <input id="cal-lat" placeholder="📍 Latitude (e.g., 28.6139)" style="flex: 0 0 180px;">
+  <input id="cal-lon" placeholder="📍 Longitude (e.g., 77.2090)" style="flex: 0 0 180px;">
+  <button id="cal-run" class="btn"><i class="fas fa-sync-alt"></i> Load Calendar</button>
+  <a class="btn secondary" href="/"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+  <div class="legend">
+    <span class="dot green"></span><strong>Excellent</strong>
+    <span class="dot yellow"></span><strong>Acceptable</strong>
+    <span class="dot red"></span><strong>Poor</strong>
+  </div>
+</section>
+
+<section id="calendar-views" class="calendar-views">
+  <div class="view-toggle">
+    <button id="view-current" class="btn active"><i class="fas fa-clock"></i> Current Conditions</button>
+    <button id="view-climatology" class="btn"><i class="fas fa-history"></i> Historical Climatology</button>
+  </div>
+  <div id="current-view" class="view-panel">
+    <h3><i class="fas fa-sun"></i> Current Conditions</h3>
+    <div id="month-grid" class="month-grid"></div>
+  </div>
+  <div id="climatology-view" class="view-panel" style="display:none;">
+    <h3><i class="fas fa-chart-line"></i> Historical Climatology</h3>
+    <div id="climatology-grid" class="month-grid"></div>
+  </div>
+</section>
+
+<script src="/static/js/api.js"></script>
+<script src="/static/js/calendar.js"></script>
+{% endblock %}

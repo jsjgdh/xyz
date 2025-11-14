@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Crop Insights - Smart Agriculture Platform</title>
+  <link rel="stylesheet" href="/static/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="brand">Crop Insights</div>
+    <div class="links">
+      <a href="/"><i class="fas fa-home"></i> Dashboard</a>
+      <a href="/rec"><i class="fas fa-seedling"></i> Recommendations</a>
+      <a href="/calendar"><i class="fas fa-calendar-alt"></i> Calendar</a>
+      <a href="/ui-docs"><i class="fas fa-book"></i> Docs</a>
+    </div>
+  </nav>
+  <main class="container">
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>

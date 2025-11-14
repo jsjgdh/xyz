@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block content %}
+<div style="margin-bottom: 2rem;">
+  <h1 style="font-size: 2.5rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+    <i class="fas fa-seedling"></i> Crop Recommendations
+  </h1>
+  <p style="color: var(--text-secondary); font-size: 1.1rem;">Discover the best crops for your location based on weather and soil conditions</p>
+</div>
+
+<section class="controls">
+  <input id="rec-lat" placeholder="📍 Latitude (e.g., 28.6139)" style="flex: 0 0 180px;">
+  <input id="rec-lon" placeholder="📍 Longitude (e.g., 77.2090)" style="flex: 0 0 180px;">
+  <button id="rec-run" class="btn"><i class="fas fa-play"></i> Get Recommendations</button>
+  <button id="export-csv" class="btn secondary"><i class="fas fa-download"></i> Quick Export</button>
+  <button id="export-options" class="btn secondary"><i class="fas fa-cog"></i> Export Options</button>
+  <a class="btn secondary" href="/"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+</section>
+
+<section class="filters">
+  <input id="filter-search" placeholder="🔍 Search crops by name...">
+  <select id="filter-category">
+    <option value="">🌾 All Categories</option>
+    <option value="cereal">🌾 Cereal</option>
+    <option value="legume">🥜 Legume</option>
+    <option value="vegetable">🥬 Vegetable</option>
+    <option value="root">🥕 Root</option>
+    <option value="bulb">🧅 Bulb</option>
+    <option value="leafy">🥗 Leafy</option>
+    <option value="oilseed">🌻 Oilseed</option>
+    <option value="fiber">🧵 Fiber</option>
+    <option value="tuber">🥔 Tuber</option>
+    <option value="cash">💰 Cash</option>
+  </select>
+  <select id="filter-status">
+    <option value="">🎯 All Statuses</option>
+    <option value="green">✅ Excellent Match</option>
+    <option value="yellow">⚠️ Acceptable Match</option>
+    <option value="red">❌ Poor Match</option>
+  </select>
+</section>
+
+<section id="export-panel" class="export-panel" style="display:none;">
+  <h3><i class="fas fa-file-csv"></i> CSV Export Options</h3>
+  <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Select the fields you want to include in your export:</p>
+  <div class="export-fields">
+    <label><input type="checkbox" name="export-field" value="crop" checked> <i class="fas fa-seedling"></i> Crop Name</label>
+    <label><input type="checkbox" name="export-field" value="score" checked> <i class="fas fa-star"></i> Score</label>
+    <label><input type="checkbox" name="export-field" value="status" checked> <i class="fas fa-flag"></i> Status</label>
+    <label><input type="checkbox" name="export-field" value="category"> <i class="fas fa-tags"></i> Category</label>
+    <label><input type="checkbox" name="export-field" value="growth_cycle_days"> <i class="fas fa-calendar-day"></i> Growth Cycle (days)</label>
+    <label><input type="checkbox" name="export-field" value="water_mm"> <i class="fas fa-tint"></i> Water Requirements (mm)</label>
+    <label><input type="checkbox" name="export-field" value="temp"> <i class="fas fa-thermometer-half"></i> Temperature</label>
+    <label><input type="checkbox" name="export-field" value="rain"> <i class="fas fa-cloud-rain"></i> Rainfall</label>
+    <label><input type="checkbox" name="export-field" value="ph"> <i class="fas fa-flask"></i> pH Level</label>
+    <label><input type="checkbox" name="export-field" value="soc"> <i class="fas fa-leaf"></i> Soil Organic Carbon</label>
+    <label><input type="checkbox" name="export-field" value="texture"> <i class="fas fa-mountain"></i> Soil Texture</label>
+  </div>
+  <div class="export-actions">
+    <button id="export-custom" class="btn"><i class="fas fa-download"></i> Export Selected Fields</button>
+    <button id="export-all" class="btn secondary"><i class="fas fa-database"></i> Export All Data</button>
+    <button id="export-close" class="btn secondary"><i class="fas fa-times"></i> Close</button>
+  </div>
+</section>
+
+<section id="rec-list" class="cards"></section>
+
+<script src="/static/js/api.js"></script>
+<script src="/static/js/recommendations.js"></script>
+{% endblock %}

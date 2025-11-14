@@ -1,0 +1,285 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="controls">
+  <h1>UI Component Library</h1>
+  <a class="btn secondary" href="/">Back to Dashboard</a>
+</section>
+
+<section class="docs-section">
+  <h2>Color Palette</h2>
+  <div class="color-grid">
+    <div class="color-item">
+      <div class="color-swatch" style="background: var(--bg-light);"></div>
+      <div class="color-info">
+        <strong>Background Light</strong>
+        <code>#f5f7fa</code>
+        <p>Main background color for light theme</p>
+      </div>
+    </div>
+    <div class="color-item">
+      <div class="color-swatch" style="background: var(--blue);"></div>
+      <div class="color-info">
+        <strong>Primary Blue</strong>
+        <code>#1e90ff</code>
+        <p>Primary action buttons and highlights</p>
+      </div>
+    </div>
+    <div class="color-item">
+      <div class="color-swatch" style="background: var(--navy);"></div>
+      <div class="color-info">
+        <strong>Navy</strong>
+        <code>#0a2a66</code>
+        <p>Secondary buttons and headers</p>
+      </div>
+    </div>
+    <div class="color-item">
+      <div class="color-swatch" style="background: var(--graphite);"></div>
+      <div class="color-info">
+        <strong>Graphite</strong>
+        <code>#2f3640</code>
+        <p>Primary text color</p>
+      </div>
+    </div>
+    <div class="color-item">
+      <div class="color-swatch" style="background: var(--green);"></div>
+      <div class="color-info">
+        <strong>Success Green</strong>
+        <code>#23a559</code>
+        <p>Success states and good recommendations</p>
+      </div>
+    </div>
+    <div class="color-item">
+      <div class="color-swatch" style="background: var(--yellow);"></div>
+      <div class="color-info">
+        <strong>Warning Yellow</strong>
+        <code>#f5a623</code>
+        <p>Warning states and medium recommendations</p>
+      </div>
+    </div>
+    <div class="color-item">
+      <div class="color-swatch" style="background: var(--red);"></div>
+      <div class="color-info">
+        <strong>Error Red</strong>
+        <code>#e74c3c</code>
+        <p>Error states and poor recommendations</p>
+      </div>
+    </div>
+    <div class="color-item">
+      <div class="color-swatch" style="background: var(--gray);"></div>
+      <div class="color-info">
+        <strong>Gray</strong>
+        <code>#c7ccd4</code>
+        <p>Borders and secondary elements</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="docs-section">
+  <h2>Buttons</h2>
+  <div class="component-showcase">
+    <div class="showcase-item">
+      <h3>Primary Button</h3>
+      <button class="btn">Primary Action</button>
+      <code>&lt;button class="btn"&gt;Primary Action&lt;/button&gt;</code>
+    </div>
+    <div class="showcase-item">
+      <h3>Secondary Button</h3>
+      <button class="btn secondary">Secondary Action</button>
+      <code>&lt;button class="btn secondary"&gt;Secondary Action&lt;/button&gt;</code>
+    </div>
+  </div>
+</section>
+
+<section class="docs-section">
+  <h2>Cards</h2>
+  <div class="component-showcase">
+    <div class="showcase-item">
+      <h3>Recommendation Card</h3>
+      <div class="card">
+        <div class="title">Rice <span class="badge green">Green</span></div>
+        <div>Score: 85</div>
+        <div>Rain: 250 mm</div>
+        <div>Temp: 28 °C</div>
+        <div>pH: 6.2</div>
+        <div>SOC: 1.8%</div>
+        <div>Texture: Clay Loam</div>
+        <div>Category: Cereal</div>
+        <div>Cycle: 120 days</div>
+      </div>
+      <code>Standard recommendation card with all data fields</code>
+    </div>
+  </div>
+</section>
+
+<section class="docs-section">
+  <h2>Status Indicators</h2>
+  <div class="component-showcase">
+    <div class="showcase-item">
+      <h3>Status Badges</h3>
+      <span class="badge green">Green</span>
+      <span class="badge yellow">Yellow</span>
+      <span class="badge red">Red</span>
+      <code>
+        &lt;span class="badge green"&gt;Green&lt;/span&gt;
+        &lt;span class="badge yellow"&gt;Yellow&lt;/span&gt;
+        &lt;span class="badge red"&gt;Red&lt;/span&gt;
+      </code>
+    </div>
+    <div class="showcase-item">
+      <h3>Status Dots</h3>
+      <span class="dot green"></span>
+      <span class="dot yellow"></span>
+      <span class="dot red"></span>
+      <code>
+        &lt;span class="dot green"&gt;&lt;/span&gt;
+        &lt;span class="dot yellow"&gt;&lt;/span&gt;
+        &lt;span class="dot red"&gt;&lt;/span&gt;
+      </code>
+    </div>
+  </div>
+</section>
+
+<section class="docs-section">
+  <h2>Form Controls</h2>
+  <div class="component-showcase">
+    <div class="showcase-item">
+      <h3>Input Fields</h3>
+      <input placeholder="Latitude" value="28.6139">
+      <input placeholder="Longitude" value="77.2090">
+      <code>
+        &lt;input placeholder="Latitude" value="28.6139"&gt;
+        &lt;input placeholder="Longitude" value="77.2090"&gt;
+      </code>
+    </div>
+    <div class="showcase-item">
+      <h3>Select Dropdowns</h3>
+      <select>
+        <option value="">All categories</option>
+        <option value="cereal">Cereal</option>
+        <option value="legume">Legume</option>
+      </select>
+      <code>
+        &lt;select&gt;
+          &lt;option value=""&gt;All categories&lt;/option&gt;
+          &lt;option value="cereal"&gt;Cereal&lt;/option&gt;
+          &lt;option value="legume"&gt;Legume&lt;/option&gt;
+        &lt;/select&gt;
+      </code>
+    </div>
+  </div>
+</section>
+
+<section class="docs-section">
+  <h2>Calendar Components</h2>
+  <div class="component-showcase">
+    <div class="showcase-item">
+      <h3>Month Grid</h3>
+      <div class="month-grid">
+        <div class="month green">
+          <div>January</div>
+          <div>Rice (climate avg)</div>
+          <div class="month-details">
+            <span>Temp: 25°C</span>
+            <span>Rain: 150mm</span>
+          </div>
+        </div>
+        <div class="month yellow">
+          <div>February</div>
+          <div>Wheat (climate avg)</div>
+          <div class="month-details">
+            <span>Temp: 22°C</span>
+            <span>Rain: 80mm</span>
+          </div>
+        </div>
+      </div>
+      <code>Month cards with status colors and planting indicators</code>
+    </div>
+  </div>
+</section>
+
+<section class="docs-section">
+  <h2>Export Panel</h2>
+  <div class="component-showcase">
+    <div class="showcase-item">
+      <h3>Export Options</h3>
+      <div class="export-panel">
+        <h3>CSV Export Options</h3>
+        <div class="export-fields">
+          <label><input type="checkbox" checked> Crop Name</label>
+          <label><input type="checkbox" checked> Score</label>
+          <label><input type="checkbox"> Category</label>
+        </div>
+        <div class="export-actions">
+          <button class="btn">Export Selected Fields</button>
+          <button class="btn secondary">Export All Data</button>
+        </div>
+      </div>
+      <code>Customizable export panel with field selection</code>
+    </div>
+  </div>
+</section>
+
+<section class="docs-section">
+  <h2>Responsive Grid System</h2>
+  <div class="component-showcase">
+    <div class="showcase-item">
+      <h3>Dashboard Grid</h3>
+      <div class="grid">
+        <div class="panel">Weather Panel</div>
+        <div class="panel">Soil Panel</div>
+        <div class="panel">Recommendations Panel</div>
+        <div class="panel">Charts Panel</div>
+      </div>
+      <code>Responsive 2-column grid that collapses to 1-column on mobile</code>
+    </div>
+  </div>
+</section>
+
+<section class="docs-section">
+  <h2>Usage Guidelines</h2>
+  <div class="guidelines">
+    <h3>Design Principles</h3>
+    <ul>
+      <li><strong>Hierarchy:</strong> Use size, color, and spacing to establish visual hierarchy</li>
+      <li><strong>Contrast:</strong> Ensure sufficient contrast between text and background colors</li>
+      <li><strong>Balance:</strong> Distribute visual weight evenly across the interface</li>
+      <li><strong>Movement:</strong> Guide the user's eye through the interface with visual flow</li>
+    </ul>
+    
+    <h3>Component Usage</h3>
+    <ul>
+      <li><strong>Buttons:</strong> Use primary for main actions, secondary for supporting actions</li>
+      <li><strong>Status Colors:</strong> Green for success/good, yellow for warning/medium, red for error/poor</li>
+      <li><strong>Cards:</strong> Keep content concise, use consistent spacing and typography</li>
+      <li><strong>Forms:</strong> Provide clear labels and helpful placeholder text</li>
+    </ul>
+    
+    <h3>Responsive Design</h3>
+    <ul>
+      <li><strong>Mobile First:</strong> Design for mobile screens first, then scale up</li>
+      <li><strong>Breakpoints:</strong> Use 700px as the main breakpoint for mobile/tablet</li>
+      <li><strong>Touch Targets:</strong> Ensure buttons and interactive elements are at least 44px tall</li>
+      <li><strong>Content Priority:</strong> Stack content vertically on mobile, prioritize most important information</li>
+    </ul>
+  </div>
+</section>
+
+<style>
+.docs-section{margin-bottom:32px}
+.docs-section h2{color:var(--navy);border-bottom:2px solid var(--blue);padding-bottom:8px}
+.component-showcase{display:grid;gap:24px;margin-bottom:24px}
+.showcase-item{background:#fff;border:1px solid var(--gray);border-radius:8px;padding:16px}
+.showcase-item h3{margin-top:0;color:var(--graphite)}
+.showcase-item code{display:block;background:var(--bg-light);padding:8px;border-radius:4px;font-size:12px;margin-top:8px;white-space:pre-wrap}
+.color-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.color-item{display:flex;align-items:center;gap:12px}
+.color-swatch{width:60px;height:60px;border-radius:8px;border:1px solid var(--gray)}
+.color-info code{font-size:12px;background:none;padding:0;margin:4px 0}
+.color-info p{margin:4px 0;font-size:14px;color:var(--graphite)}
+.guidelines{background:#fff;border:1px solid var(--gray);border-radius:8px;padding:16px}
+.guidelines h3{color:var(--navy);margin-top:16px;margin-bottom:8px}
+.guidelines ul{margin:8px 0;padding-left:20px}
+.guidelines li{margin:4px 0;font-size:14px}
+</style>
+{% endblock %}
